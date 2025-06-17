@@ -1,0 +1,328 @@
+/* LoginPage.css */
+body {
+  background: linear-gradient(120deg, #f6d365, #fda085);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  margin-top: 80px;
+  padding: 40px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  animation: fadeInUp 1s ease-out;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: #333;
+  animation: slideInDown 1s ease-out;
+}
+
+label {
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #f78b00;
+  box-shadow: 0 0 5px rgba(255, 165, 0, 0.6);
+  outline: none;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  margin-right: 10px;
+  background-color: #f78b00;
+  color: white;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #e67e00;
+  transform: scale(1.05);
+}
+
+.checkbox {
+  margin-right: 10px;
+}
+
+a {
+  color: #f78b00;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #e67e00;
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.circle-shape {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #f78b00 40%, #fda085);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  animation: popIn 0.8s ease-out;
+}
+
+.login-heading {
+  font-weight: bold;
+  color: #333;
+  animation: slideInDown 1s ease-out;
+}
+
+/* Optional Animation */
+@keyframes popIn {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+/* Top-left fixed circle */
+.corner-circle-right {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #f78b00 40%, #fda085);
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+/* Smaller login heading */
+.login-heading-small {
+  font-size: 1.5rem; /* Smaller than default h1 */
+  margin-top: 100px;  /* Push it below the circle */
+  margin-left: 10px;
+  color: #333;
+  font-weight: 600;
+  z-index: 2;
+  position: relative;
+}
+@media (max-width: 576px) {
+  .corner-circle {
+    width: 60px;
+    height: 60px;
+  }}
+
+  .login-heading-small {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 60px; /* space from circle */
+  color: #333;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+/* Animation for entrance */
+.animated-login {
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeSlideIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.login-wrapper {
+  border-top: 4px solid #f78b00; /* Top border only */
+  border-radius: 16px;
+  padding: 40px 30px;
+  margin: 20px auto;
+  max-width: 600px;
+  background-color: #fff;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  
+}
+
+.transparent-header {
+  background-color: rgba(255, 255, 255, 0.0); /* Full transparency */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Circle styling */
+.circle-shape {
+  width: 120px;
+  height: 120px;
+  background-color: rgba(255, 255, 255, 0.1); /* Slight transparent white */
+  border-radius: 50%;
+  margin: auto;
+  border: 2px solid #fff;
+}
+
+/* Optional: add glass-like blur */
+.transparent-header {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+
+.circle-top-border {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #f78b00 40%, #fda085);
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.label-left {
+  display: block;
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+.bold-input {
+  font-weight: bold;
+}
+
+login-wrapper {
+  background-color: rgba(255, 255, 255, 0.15); /* semi-transparent */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 2rem;
+  width: 100%;
+  max-width: 500px;
+  min-height: 500px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px); /* Glass effect */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  color: #fff;
+}
+/* Optional: Improve label visibility on transparent background */
+.label-left {
+  color: #020202;
+  font-weight: bold;
+}
+
+
+/* Button styling for contrast */
+.submit, .reset {
+  padding: 10px 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.submit {
+  background-color: #007bff;
+  color: white;
+}
+
+.submit:hover {
+  background-color: #0056b3;
+}
+
+.reset {
+  background-color: #6c757d;
+  color: white;
+}
+
+.reset:hover {
+  background-color: #5a6268;
+}
+
+
+.submit:hover {
+  background-color: #ba1f1fd5;
+}
+
+.reset:hover{
+  background-color: #c99f16d5;
+}
+/* Make links stand out */
+a {
+  color: #1556b9;
+}
+a:hover {
+  text-decoration: underline;
+}
+.login-link {
+  font-weight: bold;
+  color: #007bff; /* Bootstrap's primary blue */
+  text-decoration: none;
+}
+
+.login-link:hover {
+  color: #0056b3; /* Darker blue on hover */
+  text-decoration: underline;
+}
+
+.back-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  position: relative;
+}
+
+.back-circle:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
+
