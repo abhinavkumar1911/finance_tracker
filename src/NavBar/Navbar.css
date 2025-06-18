@@ -37,3 +37,14 @@
   color: #fff700 !important;
   border-bottom: 2px solid #fff700;
 }
+
+
+.navbar-toggler {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.navbar-toggler.toggled .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.5 1.5l13 13m0-13l-13 13' stroke='%23fff' stroke-width='2'/%3E%3C/svg%3E");
+}
