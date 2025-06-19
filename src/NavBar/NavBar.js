@@ -40,24 +40,59 @@ function NavBar() {
 
         <div className={`collapse navbar-collapse ${isToggled ? 'show' : ''}`} id="navbarNav">
           <ul className="navbar-nav ms-auto text-end">
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/accounts">Accounts</NavLink>
+
+            {/* Accounts Dropdown */}
+            <li className="nav-item dropdown">
+              <span className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
+                Accounts
+              </span>
+              <ul className="dropdown-menu">
+                <li><NavLink className="dropdown-item" to="/BankAccounts">Bank Accounts</NavLink></li>
+                <li><NavLink className="dropdown-item" to="/AccountDetails">Accounts Details</NavLink></li>
+              </ul>
             </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/credit-cards">Credit Cards</NavLink>
+
+            {/* Credit Cards Dropdown */}
+            <li className="nav-item dropdown">
+              <span className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
+                Credit Cards
+              </span>
+              <ul className="dropdown-menu">
+                <li><NavLink className="dropdown-item" to="/Creditcard">Credit cards</NavLink></li>
+                <li><NavLink className="dropdown-item" to="/CreditCard_Details">Card Details</NavLink></li>
+              </ul>
             </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/loan">Loan</NavLink>
+
+            {/* Loan Dropdown */}
+            <li className="nav-item dropdown">
+              <span className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
+                Loan
+              </span>
+              <ul className="dropdown-menu">
+                <li><NavLink className="dropdown-item" to="/personal-loans">Personal Loans</NavLink></li>
+                <li><NavLink className="dropdown-item" to="/home-loans">Home Loans</NavLink></li>
+              </ul>
             </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/Debts">Other</NavLink>
+
+            {/* Debts Dropdown */}
+            <li className="nav-item dropdown">
+              <span className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
+                Other
+              </span>
+              <ul className="dropdown-menu">
+                <li><NavLink className="dropdown-item" to="/utilities">Utilities</NavLink></li>
+                <li><NavLink className="dropdown-item" to="/subscriptions">Subscriptions</NavLink></li>
+              </ul>
             </li>
+
+            {/* Profile & Logout */}
             <li className="nav-item">
-              <NavLink className="nav-link " to="/profile">
+              <NavLink className="nav-link" to="/profile">
                 <i className="bi bi-person-circle me-1"></i>
                 <span>Profile</span>
               </NavLink>
             </li>
+
             <li className="nav-item">
               <NavLink className="nav-link" to="/">Logout</NavLink>
             </li>

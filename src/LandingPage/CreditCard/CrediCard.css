@@ -1,0 +1,5 @@
+.thead-yellow th {
+  background-color: yellow;
+  font-weight: bold;
+  color: black; /* ensures text is readable */
+}

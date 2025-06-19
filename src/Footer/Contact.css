@@ -1,0 +1,54 @@
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.contact-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact-container h2 {
+  font-size: 2rem;
+  margin-top: 1.5rem;
+}
+
+.contact-container ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 1rem 0;
+}
+
+.contact-container li {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.contact-container a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.contact-container a:hover {
+  text-decoration: underline;
+}
+
+.contact-details {
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-details ul {
+  margin-left: 0;
+}
+
+.contact-details li {
+  font-size: 1.1rem;
+}

@@ -1,12 +1,32 @@
 .footer {
-  position: relative;
-  bottom: 0;
+  position: fixed; /* Fix it to the viewport */
+  bottom: 0;        /* Position at the bottom */
+  left: 0;
   width: 100%;
-  font-size: 0.9rem;
-  background-color: #1c1c1c;
+  background-color: #000000a7 !important;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  z-index: 1000; /* Ensure it stays above other elements */
 }
 
-.footer p {
-  margin: 0;
-  color: #ccc;
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.9rem;
+}
+body, .main-content {
+  padding-bottom: 80px; /* Adjust based on footer height */
 }
