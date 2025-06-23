@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
-import { collection, addDoc } from 'firebase/firestore';
-import { db } from '../../Firebase';
-import { ToastContainer, toast } from 'react-toastify';
+import React, {  useState } from "react";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../../Firebase";
+import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../CreditCard/CrediCard.css';
+import './Account_Detials.css';
 
 
 function BankAccounts() {

@@ -1,21 +1,48 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState,useEffect } from "react";
+import { NavLink ,useNavigate} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './Navbar.css';
 import logo from '../assets/logo.png';
+import { getAuth, signOut } from "firebase/auth";
 
 function NavBar() {
   const [isToggled, setIsToggled] = useState(false);
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
+  const auth = getAuth();
+
+   useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
+      if (currentUser) {
+        setUser({
+          email: currentUser.email,
+          lastLogin: currentUser.metadata.lastSignInTime,
+        });
+      }
+    })
+    return () => unsubscribe();
+  }, [auth])
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      navigate("/"); // Redirect to homepage or login
+    } catch (error) {
+      console.error("Logout failed", error);
+    }
+  }
 
   const handleToggle = () => {
     setIsToggled(!isToggled);
   };
 
+  
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-primary shadow fixed-top">
       <div className="container-fluid">
-        <NavLink className="navbar-brand d-flex align-items-center" to="/about">
+        <NavLink className="navbar-brand d-flex align-items-center" to="/DashBoard">
           <img
             src={logo}
             alt="Logo"
@@ -41,6 +68,12 @@ function NavBar() {
         <div className={`collapse navbar-collapse ${isToggled ? 'show' : ''}`} id="navbarNav">
           <ul className="navbar-nav ms-auto text-end">
 
+
+            {/*Expanse */}
+            <li className="nav-item">
+  <NavLink className="nav-link" to="/Expanse">Expanse</NavLink>
+</li>
+
             {/* Accounts Dropdown */}
             <li className="nav-item dropdown">
               <span className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
@@ -64,7 +97,7 @@ function NavBar() {
             </li>
 
             {/* Loan Dropdown */}
-            <li className="nav-item dropdown">
+            {/*<li className="nav-item dropdown">
               <span className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
                 Loan
               </span>
@@ -72,10 +105,10 @@ function NavBar() {
                 <li><NavLink className="dropdown-item" to="/personal-loans">Personal Loans</NavLink></li>
                 <li><NavLink className="dropdown-item" to="/home-loans">Home Loans</NavLink></li>
               </ul>
-            </li>
+            </li>*/}
 
             {/* Debts Dropdown */}
-            <li className="nav-item dropdown">
+           {/*} <li className="nav-item dropdown">
               <span className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
                 Other
               </span>
@@ -83,19 +116,35 @@ function NavBar() {
                 <li><NavLink className="dropdown-item" to="/utilities">Utilities</NavLink></li>
                 <li><NavLink className="dropdown-item" to="/subscriptions">Subscriptions</NavLink></li>
               </ul>
+            </li> */}
+ {/* Profile Dropdown */}
+            <li className="nav-item dropdown">
+              <span
+                className="nav-link dropdown-toggle"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i className="bi bi-person-circle me-1"></i> Profile
+              </span>
+              <ul className="dropdown-menu dropdown-menu-end">
+                {user ? (
+                  <>
+                    <li className="dropdown-item text-muted">Email: {user.email}</li>
+                    <li className="dropdown-item text-muted">Last Login: <br /><small>{user.lastLogin}</small></li>
+                    <li><hr className="dropdown-divider" /></li>
+                    <li><button className="dropdown-item text-danger" onClick={handleLogout}>Logout</button></li>
+                  </>
+                ) : (
+                  <li className="dropdown-item">Not logged in</li>
+                )}
+              </ul>
             </li>
 
-            {/* Profile & Logout */}
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/profile">
-                <i className="bi bi-person-circle me-1"></i>
-                <span>Profile</span>
-              </NavLink>
-            </li>
 
-            <li className="nav-item">
+           {/* <li className="nav-item">
               <NavLink className="nav-link" to="/">Logout</NavLink>
-            </li>
+            </li>*/}
           </ul>
         </div>
       </div>

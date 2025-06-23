@@ -1,0 +1,48 @@
+.action-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  opacity: 0.85;
+  transition: 0.3s ease;
+}
+
+.edit-btn {
+  background-color: #007bff; /* Bootstrap primary */
+}
+
+.edit-btn:hover {
+  background-color: #0056b3;
+  opacity: 1;
+}
+
+.delete-btn {
+  background-color: #dc3545; /* Bootstrap danger */
+}
+
+.delete-btn:hover {
+  background-color: #a71d2a;
+  opacity: 1;
+}
+
+.action-btn {
+  padding: 5px 10px;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: #007bff;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+}
+.thead-yellow th {
+  background-color: yellow;
+  font-weight: bold;
+  color: black; /* ensures text is readable */
+}

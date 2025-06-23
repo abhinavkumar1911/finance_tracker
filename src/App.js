@@ -12,6 +12,10 @@ import About from './Footer/About';
 import Contact from './Footer/Contact';
 import Creditcard from './LandingPage/CreditCard/Creditcard';
 import Creditcard_details from './LandingPage/CreditCard/CreditCard_Details';
+import Account_Edit from './LandingPage/Account/Account_Edit';
+import Card_Edit from './LandingPage/CreditCard/Card_Edit';
+import ProfileInfo from './ProfileInfo';
+import Expanse from './Expanse';
 
 function App() {
   const location = useLocation();
@@ -34,10 +38,12 @@ function App() {
           
           <Route path="/bankAccounts" element={<BankAccounts/>}/>
           <Route path='/AccountDetails' element={<AccountDetails/>}/>
+          <Route path="/Account_Edit/:id" element={<Account_Edit/>}/>
           
           
           <Route path="/Creditcard" element={<Creditcard/>}/>
           <Route path='/Creditcard_details' element={<Creditcard_details/>}/>
+          <Route path="/Card_Edit/:id" element={<Card_Edit/>}/>
 
 
           <Route path="/loan" element={<h2>Loan Page</h2>} />
@@ -45,6 +51,9 @@ function App() {
           <Route path="/dashboard" element={<h2>Welcome to Finance Tracker</h2>} />
           <Route path="/About" element={<About/>} />
           <Route path="/Contact" element={<Contact/>} />
+          <Route path="/user-profile" element={<ProfileInfo/>} />
+          <Route path="/Expanse" element={<Expanse/>} />
+
         </Routes>
       </div>
 
