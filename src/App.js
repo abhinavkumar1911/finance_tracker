@@ -16,6 +16,7 @@ import Account_Edit from './LandingPage/Account/Account_Edit';
 import Card_Edit from './LandingPage/CreditCard/Card_Edit';
 import ProfileInfo from './ProfileInfo';
 import Expanse from './Expanse';
+import Dashboard from './LandingPage/Dashboard';
 
 function App() {
   const location = useLocation();
@@ -48,7 +49,7 @@ function App() {
 
           <Route path="/loan" element={<h2>Loan Page</h2>} />
           <Route path="/debts" element={<h2>Debts Page</h2>} />
-          <Route path="/dashboard" element={<h2>Welcome to Finance Tracker</h2>} />
+          <Route path="/Dashboard" element={<Dashboard/>} />
           <Route path="/About" element={<About/>} />
           <Route path="/Contact" element={<Contact/>} />
           <Route path="/user-profile" element={<ProfileInfo/>} />

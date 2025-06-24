@@ -42,7 +42,7 @@ function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary shadow fixed-top">
       <div className="container-fluid">
-        <NavLink className="navbar-brand d-flex align-items-center" to="/DashBoard">
+        <NavLink className="navbar-brand d-flex align-items-center" to="/Dashboard">
           <img
             src={logo}
             alt="Logo"
